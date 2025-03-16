@@ -4,7 +4,7 @@ import numpy as np
 import time
 
 st.subheader("Home 🏠​")
-st.sidebar.subheader("Home🏠​")
+st.sidebar.markdown("# Home🏠​")
 
 st.text_input("Input", key="path-input")
 st.text_input("Output", key="path-output")
