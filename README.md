@@ -20,7 +20,7 @@ This is a video tool about video like convert or fix.
 - MKV
 - WEBM
 
-### 音频提取（默认提取为MP3格式）
+### 音频提取（默认提取为MP3格式） ----core/extract/mp3_extract.py
 
 ### 视频修复
 - 修复视频文件的音频和视频流，使其可以正常播放
