@@ -21,15 +21,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-system = platform.system()
-
-if system == "Windows":
-    ffmpeg_path = "D:\\zc\\ZC\\My_New_bot\\ffmpeg\\ffmpeg-master-latest-win64-gpl\\bin\\ffmpeg.exe"  # Windows路径
-elif system == "Darwin":
-    ffmpeg_path = "/usr/local/bin/ffmpeg"         # macOS路径
-else:
-    ffmpeg_path = "/usr/bin/ffmpeg"               # Linux路径
-
 def main():
     st.title("🎬 MP3 Extract")
     st.markdown("---")
@@ -72,8 +63,8 @@ def main():
             st.markdown("  ")
 
         # 转换按钮
-        if st.button("🚀 开始转换", use_container_width=True):
-            with st.spinner("⏳ 正在转换，请稍候..."):
+        if st.button("🚀 开始提取", use_container_width=True):
+            with st.spinner("⏳ 正在提取，请稍候..."):
                 with tempfile.TemporaryDirectory() as tmp_dir:
                     try:
                         # 保存上传文件
@@ -85,7 +76,7 @@ def main():
 
                         # 构建FFmpeg命令
                         cmd = [
-                            ffmpeg_path,
+                            "ffmpeg",
                             "-y", "-v", "error",
                             "-i", str(input_path),
                             "-vn",  # 忽略视频流
@@ -106,12 +97,12 @@ def main():
                         file_size = len(mp3_data) / 1024 / 1024
 
                         # 显示结果
-                        st.success(f"✅ 转换完成！文件大小: {file_size:.2f} MB")
+                        st.success(f"✅ Done！文件大小: {file_size:.2f} MB")
                         st.balloons()
 
                         # 下载按钮
                         st.download_button(
-                            label="⬇️ 下载MP3文件",
+                            label="⬇️ Download",
                             data=mp3_data,
                             file_name=output_path.name,
                             mime="audio/mpeg",
@@ -120,8 +111,7 @@ def main():
                         )
 
                     except Exception as e:
-                        st.error(f"❌ 转换失败:  {str(e)}")
-                        # st.write(system)
+                        st.error(f"❌ 提取失败:  {str(e)}")
 
 if __name__ == "__main__":
     main()
