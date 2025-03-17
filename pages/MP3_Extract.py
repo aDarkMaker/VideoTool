@@ -15,7 +15,7 @@ st.set_page_config(
 # 自定义样式
 st.markdown("""
 <style>
-.uploadedFile { padding: 20px; border-radius: 5px; background: #f0f2f6; }
+.uploadedFile { padding: 20px; border-radius: 5px; background: #c0c9d9; }
 .preview-area { margin-top: 1rem; }
 .download-btn { background: #25d366 !important; color: white !important; }
 </style>
@@ -70,6 +70,7 @@ def main():
             🕒 上传时间: {time.strftime("%Y-%m-%d %H:%M:%S")}
             """
             st.markdown(f'<div class="uploadedFile">{file_info}</div>', unsafe_allow_html=True)
+            st.markdown("---")
 
         # 转换按钮
         if st.button("🚀 开始转换", use_container_width=True):
