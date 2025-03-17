@@ -36,8 +36,8 @@ def main():
     
     # 文件上传区域
     uploaded_file = st.file_uploader(
-        "拖放或选择视频文件",
-        type=["mp4", "avi", "mkv", "mov", "flv", "webm"],
+        "拖放或选择视频文件: ",
+        type=["mp4", "avi", "mkv", "mov", "flv", "webm", "mpeg4"], 
         key="uploader",
         help="支持常见视频格式"
     )
