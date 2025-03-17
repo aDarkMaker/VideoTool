@@ -15,7 +15,7 @@ st.set_page_config(
 # 自定义样式
 st.markdown("""
 <style>
-.uploadedFile { padding: 20px; border-radius: 5px; background: #c0c9d9;  white-space: pre-line; text-overflow: ellipsis; }
+.uploadedFile { padding: 20px; border-radius: 5px; background: #c0c9d9;  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .preview-area { margin-top: 1rem; }
 .download-btn { background: #25d366 !important; color: white !important; }
 </style>
@@ -64,10 +64,10 @@ def main():
         # 文件预览区域
         with st.expander("🎥 视频预览", expanded=True):
             st.video(uploaded_file)
-            file_info = f"""📄 文件名称: {uploaded_file.name}  
-            📏 文件大小: {uploaded_file.size/1024/1024:.2f} MB  
-            🕒 上传时间: {time.strftime("%Y-%m-%d %H:%M:%S")}
-            """
+            file_info = f"""📄 文件名称: <span class="ellipsis" title="{uploaded_file.name}">{uploaded_file.name}</span><br/>
+                        📏 文件大小: {uploaded_file.size/1024/1024:.2f} MB<br/>
+                        🕒 上传时间: {time.strftime("%Y-%m-%d %H:%M:%S")}
+                        """
             st.markdown(f'<div class="uploadedFile">{file_info}</div>', unsafe_allow_html=True)
             st.markdown("---")
 
