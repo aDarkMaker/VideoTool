@@ -7,7 +7,7 @@ import time
 
 # 页面配置
 st.set_page_config(
-    page_title="MP3提取工具",
+    page_title="MP3 Extract",
     page_icon="🎵",
     layout="centered",
 )
@@ -22,7 +22,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 def main():
-    st.title("🎬 MP3音频提取工具")
+    st.title("🎬 MP3 Extract")
     st.markdown("---")
     
     # 文件上传区域
