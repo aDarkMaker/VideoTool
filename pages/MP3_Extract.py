@@ -42,8 +42,6 @@ def main():
         help="支持常见视频格式"
     )
     
-    st.markdown("---")
-    
     # 参数设置侧边栏
     with st.sidebar:
         st.header("⚙️ 转换参数")
