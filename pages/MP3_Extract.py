@@ -1,6 +1,6 @@
 import streamlit as st
 import subprocess
-import os
+import platform
 from pathlib import Path
 import tempfile
 import time
@@ -20,6 +20,15 @@ st.markdown("""
 .download-btn { background: #25d366 !important; color: white !important; }
 </style>
 """, unsafe_allow_html=True)
+
+system = platform.system()
+
+if system == "Windows":
+    ffmpeg_path = "D:\\zc\\ZC\\My_New_bot\\ffmpeg\\ffmpeg-master-latest-win64-gpl\\bin\\ffmpeg.exe"  # Windows路径
+elif system == "Darwin":
+    ffmpeg_path = "/usr/local/bin/ffmpeg"         # macOS路径
+else:
+    ffmpeg_path = "/usr/bin/ffmpeg"               # Linux路径
 
 def main():
     st.title("🎬 MP3 Extract")
@@ -56,9 +65,9 @@ def main():
         with st.expander("🎥 视频预览", expanded=True):
             st.video(uploaded_file)
             file_info = f"""
-            📄 **文件名称**: {uploaded_file.name}  
-            📏 **文件大小**: {uploaded_file.size/1024/1024:.2f} MB  
-            🕒 **上传时间**: {time.strftime("%Y-%m-%d %H:%M:%S")}
+            📄 文件名称: {uploaded_file.name}  
+            📏 文件大小: {uploaded_file.size/1024/1024:.2f} MB  
+            🕒 上传时间: {time.strftime("%Y-%m-%d %H:%M:%S")}
             """
             st.markdown(f'<div class="uploadedFile">{file_info}</div>', unsafe_allow_html=True)
 
@@ -76,7 +85,7 @@ def main():
 
                         # 构建FFmpeg命令
                         cmd = [
-                            "ffmpeg",
+                            ffmpeg_path,
                             "-y", "-v", "error",
                             "-i", str(input_path),
                             "-vn",  # 忽略视频流
