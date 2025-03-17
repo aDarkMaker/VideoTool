@@ -6,5 +6,4 @@ import time
 st.subheader("Home 🏠​")
 st.sidebar.markdown("# Home🏠​")
 
-st.text_input("Input", key="path-input")
-st.text_input("Output", key="path-output")
+st.write("Welcome to the Home Page of the Video Tool App")
