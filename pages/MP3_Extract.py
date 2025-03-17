@@ -15,7 +15,7 @@ st.set_page_config(
 # 自定义样式
 st.markdown("""
 <style>
-.uploadedFile { padding: 20px; border-radius: 5px; background: #c0c9d9;  white-space: pre-line; }
+.uploadedFile { padding: 20px; border-radius: 5px; background: #c0c9d9;  white-space: pre-line; text-overflow: ellipsis; }
 .preview-area { margin-top: 1rem; }
 .download-btn { background: #25d366 !important; color: white !important; }
 </style>
@@ -53,7 +53,7 @@ def main():
         )
         st.markdown("---")
         st.info("""
-        **使用提示：**
+        **Tips：**
         1. 上传视频文件
         2. 调整转换参数
         3. 开始转换
@@ -121,6 +121,7 @@ def main():
 
                     except Exception as e:
                         st.error(f"❌ 转换失败:  {str(e)}")
+                        st.write(system)
 
 if __name__ == "__main__":
     main()
