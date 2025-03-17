@@ -69,7 +69,7 @@ def main():
                         🕒 上传时间: {time.strftime("%Y-%m-%d %H:%M:%S")}
                         """
             st.markdown(f'<div class="uploadedFile">{file_info}</div>', unsafe_allow_html=True)
-            st.markdown("---")
+            st.markdown("  ")
 
         # 转换按钮
         if st.button("🚀 开始转换", use_container_width=True):
