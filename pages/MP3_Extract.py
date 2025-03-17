@@ -15,7 +15,7 @@ st.set_page_config(
 # 自定义样式
 st.markdown("""
 <style>
-.uploadedFile { padding: 20px; border-radius: 5px; background: #c0c9d9; }
+.uploadedFile { padding: 20px; border-radius: 5px; background: #c0c9d9;  white-space: pre-line; }
 .preview-area { margin-top: 1rem; }
 .download-btn { background: #25d366 !important; color: white !important; }
 </style>
