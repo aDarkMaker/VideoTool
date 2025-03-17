@@ -36,11 +36,12 @@ def main():
     
     # 文件上传区域
     uploaded_file = st.file_uploader(
-        "拖放或选择视频文件",
         type=["mp4", "avi", "mkv", "mov", "flv", "webm"],
         key="uploader",
         help="支持常见视频格式"
     )
+    
+    st.markdown("---")
     
     # 参数设置侧边栏
     with st.sidebar:
@@ -121,7 +122,7 @@ def main():
 
                     except Exception as e:
                         st.error(f"❌ 转换失败:  {str(e)}")
-                        st.write(system)
+                        # st.write(system)
 
 if __name__ == "__main__":
     main()
