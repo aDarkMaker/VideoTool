@@ -64,8 +64,7 @@ def main():
         # 文件预览区域
         with st.expander("🎥 视频预览", expanded=True):
             st.video(uploaded_file)
-            file_info = f"""
-            📄 文件名称: {uploaded_file.name}  
+            file_info = f"""📄 文件名称: {uploaded_file.name}  
             📏 文件大小: {uploaded_file.size/1024/1024:.2f} MB  
             🕒 上传时间: {time.strftime("%Y-%m-%d %H:%M:%S")}
             """
