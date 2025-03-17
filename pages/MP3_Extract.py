@@ -120,8 +120,7 @@ def main():
                         )
 
                     except Exception as e:
-                        st.error(f"❌ 转换失败: {str(e)}")
-                        st.code(str(e), language="bash")
+                        st.error(f"❌ 转换失败:  {str(e)}")
 
 if __name__ == "__main__":
     main()
