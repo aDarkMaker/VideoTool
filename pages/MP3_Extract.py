@@ -36,13 +36,13 @@ def main():
     # 参数设置侧边栏
     with st.sidebar:
         st.header("⚙️ 转换参数")
-        bitrate = st.select_slider(
+        bitrate = st.selectbox(
             "音频比特率",
-            options=["320k", "256k", "192k"],
-            value="320k",
+            ("320k", "256k", "192k"),
+            index=0,
             help="更高的比特率意味着更好的音质和更大的文件大小"
         )
-        st.markdown("---")
+        st.markdown("  ")
         st.info("""
         **Tips：**
         1. 上传视频文件
