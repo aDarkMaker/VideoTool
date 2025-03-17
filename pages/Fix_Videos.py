@@ -4,14 +4,12 @@ from pathlib import Path
 import tempfile
 import time
 
-# 页面配置
 st.set_page_config(
     page_title="Video Fixer",
     page_icon="🔧",
     layout="centered",
 )
 
-# 自定义样式
 st.markdown("""
 <style>
 .uploadedFile { padding: 20px; border-radius: 5px; background: #c0c9d9; overflow: hidden; }
@@ -65,14 +63,12 @@ def main():
     st.title("Fix Videos ⚙️")
     st.markdown("---")
     
-    # 文件上传
     uploaded_file = st.file_uploader(
         "上传损坏的视频文件",
         type=["mp4", "avi", "mkv", "mov", "flv", "webm", "mpeg4"], 
         help="支持常见视频格式"
     )
     
-    # 参数设置侧边栏
     with st.sidebar:
         st.header("🪛​ 修复建议")
         st.markdown("  ")
